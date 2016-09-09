@@ -1,0 +1,17 @@
+<!-- vim: set filetype=html: -->
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Salesforce Status</title>
+		<meta charset="utf-8">
+		<% for (var css in htmlWebpackPlugin.files.css) { %>
+		<link href="/<%= htmlWebpackPlugin.files.css[css] %>" rel="stylesheet" type="text/css">
+		<% } %>
+	</head>
+	<body>
+		<div id="app"></div>
+		<% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
+		<script src="/<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
+		<% } %>
+	</body>
+</html>
